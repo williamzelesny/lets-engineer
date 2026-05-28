@@ -49,6 +49,8 @@ These rules apply to every brainstorm, including the universal (non-software) fl
 
 Do not proceed until you have a feature description from the user.
 
+**If the user doesn't have a concrete idea yet** — they want to figure out *what* to work on or generate options, rather than refine a direction they already hold — suggest `/lets-ideate` first to generate and pressure-test candidate ideas, then return here to develop the chosen one. `lets-brainstorm` explores a specific idea in depth; `lets-ideate` produces the ideas worth exploring.
+
 ## Execution Flow
 
 ### Phase 0: Resume, Assess, and Route
