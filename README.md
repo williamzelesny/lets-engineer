@@ -136,4 +136,6 @@ Built for **Claude Code** — install, the plugin cache, and slash commands assu
 
 Adapted from [Every's Compound Engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) by Kieran Klaassen and Dan Shipper, used under the MIT License.
 
+Inspired in part by [How Boris Uses Claude Code](https://howborisusesclaudecode.com) (Boris Cherny) — the `lets-explain` skill grew out of its explanatory-walkthrough technique.
+
 Licensed under the [MIT License](LICENSE).
