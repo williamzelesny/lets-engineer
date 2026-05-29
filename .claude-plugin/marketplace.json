@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Personal plugin marketplace for engineering workflow skills.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
