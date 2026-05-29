@@ -15,6 +15,7 @@ Reviews code changes using dynamically selected reviewer personas. Spawns parall
 - When feedback is needed on any code changes
 - Can be invoked standalone
 - Can run as a read-only or autofix review step inside larger workflows
+- **See also:** to *understand* an unfamiliar change before critiquing it, run `lets-explain` first — it produces an explanatory walkthrough (orientation + teaching) and then offers a handoff here
 
 ## Argument Parsing
 
