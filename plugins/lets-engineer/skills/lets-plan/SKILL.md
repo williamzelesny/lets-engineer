@@ -351,6 +351,27 @@ Ask the user only when the answer materially affects architecture, scope, sequen
 
 **Do not** run tests, build the app, or probe runtime behavior in this phase. The goal is a strong plan, not partial execution.
 
+### Phase 2.5: Decision Grill (Conditional)
+
+An optional interactive pass that walks unresolved **decision forks** with the user before the plan is written. Default-off. It complements the Phase 5.3 confidence check rather than duplicating it: the grill resolves forks *before* writing (cheap to change), while the confidence check scores the *written* plan *after* (catching what the grill's budget left behind). Resolving a fork here is far cheaper than unwinding it once it is baked into Implementation Units.
+
+#### 2.5.1 Gate and Offer
+
+Build a candidacy signal from work already done:
+- **Auto-eligible** when Phase 0.6 classified the plan as **Deep**, OR any of the high-risk signals listed in Phase 5.3.1 apply (auth/authz, payments, data migrations, external APIs, privacy/compliance, cross-surface parity, significant rollout or operational concerns).
+- **Manual** when the user says "grill me", "grill the decisions", or invokes with a grill flag — this overrides the gate even on Lightweight or plain Standard plans.
+- **Never auto-fires on Lightweight or plain Standard.** Those route straight to Phase 3; the confidence check remains their safety net.
+
+Eligibility does not start the grill — it **offers** it. From the Phase 2 question list, count the forks that materially affect architecture, scope, sequencing, or risk and cannot be responsibly inferred (the same bar as Phase 2's "ask the user only when…"). If that count is zero, skip Phase 2.5 silently. Otherwise ask once, using the platform's blocking question tool (see Interaction Method):
+
+> "This plan has [N] unresolved decision forks in [high-risk / cross-cutting] areas. Want me to walk them with you (~[N] questions, one at a time), or infer them and flag the uncertain ones in the confidence check?"
+
+Proceed into the grill only on accept. If the user declines, continue to Phase 3 unchanged — the forks stay on the Phase 2 list and reach the confidence check as before. This single meta-question is what keeps a multi-question grill from ambushing a user who wanted a fast plan.
+
+#### 2.5.2–2.5.5 Grill Execution
+
+When the user accepts, **load `references/decision-grill.md`** and execute the fork-list build, the per-question loop, the stop condition, and the feed-forward into Phase 3. Then return here and continue to Phase 3.
+
 ### Phase 3: Structure the Plan
 
 #### 3.1 Title and File Naming
