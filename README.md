@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1)](LICENSE)
 ![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757?logo=claude&logoColor=white)
 
-`lets-engineer` is a toolkit of **26 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
+`lets-engineer` is a toolkit of **27 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
 
 Adapted from [Every's Compound Engineering plugin](https://github.com/EveryInc/compound-engineering-plugin).
 
@@ -106,6 +106,7 @@ Each step reads the previous step's artifact, so you confirm scope once and let 
 |---|---|
 | `lets-compound` | Document a solved problem so your team's knowledge compounds |
 | `lets-compound-refresh` | Refresh and consolidate stale learnings under `docs/solutions/` |
+| `lets-document` | Document how the app works — architecture, functionality, business processes — as durable team reference in `docs/how-it-works/` |
 | `lets-sessions` | Search and query past coding-agent session history (Claude Code, Codex, Cursor) |
 
 **Stack styles & meta**
@@ -124,6 +125,7 @@ Skills write durable artifacts into your repo, and later runs read them back:
 - `docs/brainstorms/` — requirements docs from `lets-brainstorm`
 - `docs/plans/` — implementation plans from `lets-plan`
 - `docs/solutions/` — learnings from `lets-compound`, kept current by `lets-compound-refresh`
+- `docs/how-it-works/` — architecture and process docs from `lets-document`
 - `STRATEGY.md` — product direction from `lets-strategy`
 
 The more you use the pipeline, the more context the agent has about your codebase and decisions — so each cycle starts further ahead than the last.
