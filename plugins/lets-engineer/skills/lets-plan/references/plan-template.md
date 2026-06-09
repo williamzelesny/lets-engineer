@@ -14,6 +14,7 @@ status: active
 date: YYYY-MM-DD
 origin: docs/brainstorms/YYYY-MM-DD-<topic>-requirements.md  # include when planning from a requirements doc
 deepened: YYYY-MM-DD  # optional, set when the confidence check substantively strengthens the plan
+grilled: YYYY-MM-DD  # optional, set when Phase 2.5 resolved decision forks interactively before writing
 ---
 
 # [Plan Title]

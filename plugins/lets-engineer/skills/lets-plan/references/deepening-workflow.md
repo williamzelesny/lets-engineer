@@ -21,6 +21,10 @@ If the plan already has a `deepened:` date:
 - Prefer sections that have not yet been substantially strengthened, if their scores are comparable
 - Revisit an already-deepened section only when it still scores clearly higher than alternatives
 
+If the plan already has a `grilled:` date, its decision forks were resolved interactively with the user during Phase 2.5 (`references/decision-grill.md`):
+- Deprioritize `Key Technical Decisions` and any unit approach notes settled during the grill — an interactively-resolved decision is unlikely to be a confidence gap
+- Score them only when a checklist trigger clearly still applies (e.g., the written rationale dropped the rejected alternative the grill established, or the decision lost its connection to scope when transcribed into the plan)
+
 **Section Checklists:**
 
 **Requirements**
