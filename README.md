@@ -7,8 +7,6 @@
 
 `lets-engineer` is a toolkit of **27 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
 
-Adapted from [Every's Compound Engineering plugin](https://github.com/EveryInc/compound-engineering-plugin).
-
 ## The pipeline
 
 ```mermaid
@@ -136,8 +134,6 @@ The more you use the pipeline, the more context the agent has about your codebas
 
 Built for **Claude Code** — install, the plugin cache, and slash commands assume it. The skill instructions are written harness-aware (they reference equivalents on Codex, Gemini, and Pi), but Claude Code is the supported, tested path.
 
-## Credits & license
-
-Adapted from [Every's Compound Engineering plugin](https://github.com/EveryInc/compound-engineering-plugin) by Kieran Klaassen and Dan Shipper, used under the MIT License.
+## License
 
 Licensed under the [MIT License](LICENSE).

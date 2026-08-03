@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "lets-engineer",
-      "description": "Personal engineering workflow skills adapted from compound-engineering: brainstorm requirements, plan implementation, and more.",
+      "description": "Personal engineering workflow skills: brainstorm requirements, plan implementation, review, debug, and ship.",
       "author": {
         "name": "William Zelesny",
         "email": "william.zelesny@gmail.com"
