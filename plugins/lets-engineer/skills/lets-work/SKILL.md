@@ -98,7 +98,7 @@ Determine how to proceed based on what was provided in `<input_document>`.
 
    **Option B: Use a worktree (recommended for parallel development)**
    ```bash
-   skill: lets-worktree
+   skill: lets-branch-off
    # The skill will create a new branch from the default branch in an isolated worktree
    ```
 

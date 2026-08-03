@@ -8,7 +8,7 @@ argument-hint: "[optional: section to revisit, e.g. 'metrics' or 'approach']"
 
 **Note: The current year is 2026.** Use this when dating the strategy document.
 
-`lets-strategy` produces and maintains `STRATEGY.md` - a short, durable anchor document that captures what the product is, who it serves, how it succeeds, and where the team is investing. It lives at the repo root as a canonical, well-known file (peer of `README.md`). Downstream skills (`lets-ideate`, `lets-brainstorm`, `lets-plan`) read it as grounding when it exists.
+`lets-strategize` produces and maintains `STRATEGY.md` - a short, durable anchor document that captures what the product is, who it serves, how it succeeds, and where the team is investing. It lives at the repo root as a canonical, well-known file (peer of `README.md`). Downstream skills (`lets-ideate`, `lets-brainstorm`, `lets-plan`) read it as grounding when it exists.
 
 The document is short and structured on purpose. Good answers to a handful of sharp questions produce a better strategy than any amount of prose. This skill asks those questions, pushes back on weak answers, and writes the doc.
 

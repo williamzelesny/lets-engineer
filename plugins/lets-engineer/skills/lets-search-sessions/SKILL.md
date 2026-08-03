@@ -3,15 +3,15 @@ name: lets-search-sessions
 description: "Search and ask questions about coding agent session history across Claude Code, Codex, and Cursor. Use when asking what was worked on, what was tried before, how a problem was investigated across sessions, what happened recently, or any question about past agent sessions. Also use when the user references prior sessions, previous attempts, or past investigations — even without saying 'sessions' explicitly."
 ---
 
-# /lets-sessions
+# /lets-search-sessions
 
 Search session history across Claude Code, Codex, and Cursor and synthesize findings about what was worked on, tried, decided, or learned in prior sessions.
 
 ## Usage
 
 ```
-/lets-sessions [question or topic]
-/lets-sessions
+/lets-search-sessions [question or topic]
+/lets-search-sessions
 ```
 
 ## Pre-resolved context
@@ -99,7 +99,7 @@ Apply these filters in order to pick the sessions worth deep-diving:
 Create a per-run throwaway scratch directory:
 
 ```bash
-SCRATCH=$(mktemp -d -t lets-sessions-XXXXXX)
+SCRATCH=$(mktemp -d -t lets-search-sessions-XXXXXX)
 ```
 
 Capture the absolute path; thread it into Step 5 and Step 6. The OS handles cleanup on session end; an explicit `rm -rf "$SCRATCH"` at the end of Step 7 is harmless and makes intent explicit.
@@ -163,9 +163,9 @@ Synthesize findings from these prior sessions:
 Problem topic: <one-line topic>
 
 Sessions to read (paths in $SCRATCH):
-1. /tmp/lets-sessions-XXXX/abc123.skeleton.txt
+1. /tmp/lets-search-sessions-XXXX/abc123.skeleton.txt
    platform=claude branch=feat/auth-fix ts=2026-05-01
-2. /tmp/lets-sessions-XXXX/def456.skeleton.txt  errors=/tmp/lets-sessions-XXXX/def456.errors.txt
+2. /tmp/lets-search-sessions-XXXX/def456.skeleton.txt  errors=/tmp/lets-search-sessions-XXXX/def456.errors.txt
    platform=codex cwd=/Users/.../my-project ts=2026-05-03
 ...
 
@@ -195,7 +195,7 @@ The OS handles cleanup eventually regardless; the explicit cleanup is for reader
 
 ## Output
 
-When the caller (typically a user typing `/lets-sessions`, or another skill invoking lets-sessions via the platform's skill-invocation primitive) does not specify an output format, include a brief header noting what was searched:
+When the caller (typically a user typing `/lets-search-sessions`, or another skill invoking lets-search-sessions via the platform's skill-invocation primitive) does not specify an output format, include a brief header noting what was searched:
 
 ```
 **Sessions searched**: [count] ([N] Claude Code, [N] Codex, [N] Cursor) | [date range]

@@ -1,6 +1,6 @@
 # Read-Only Input Resolution
 
-How `lets-explain` resolves the change to explain. Adapted from `lets-code-review`'s scope detection (`skills/lets-code-review/SKILL.md` Stage 1 and `references/diff-scope.md`), but **read-only**: never switch or mutate the working tree.
+How `lets-explain` resolves the change to explain. Adapted from `lets-review-code`'s scope detection (`skills/lets-review-code/SKILL.md` Stage 1 and `references/diff-scope.md`), but **read-only**: never switch or mutate the working tree.
 
 ## Output
 
@@ -46,7 +46,7 @@ Use `gh` — **never** `gh pr checkout`.
 - Metadata: `gh pr view <number-or-url> --json title,body,url,baseRefName`
 - Diff: `gh pr diff <number-or-url>`
 
-**Do not** reuse `lets-code-review`'s local merge-base path for PRs. That path computes `git merge-base HEAD <base>`, where `HEAD` is the PR head *only after* `gh pr checkout`. With no checkout, `HEAD` is the user's current branch and the scope would be wrong. `gh pr diff` reflects the remote PR state, which is correct here — `lets-explain` explains the PR as proposed, not unpushed local fix commits.
+**Do not** reuse `lets-review-code`'s local merge-base path for PRs. That path computes `git merge-base HEAD <base>`, where `HEAD` is the PR head *only after* `gh pr checkout`. With no checkout, `HEAD` is the user's current branch and the scope would be wrong. `gh pr diff` reflects the remote PR state, which is correct here — `lets-explain` explains the PR as proposed, not unpushed local fix commits.
 
 ## Untracked files
 

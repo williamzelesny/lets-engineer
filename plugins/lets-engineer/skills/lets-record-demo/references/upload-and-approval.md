@@ -24,7 +24,7 @@ Present the preview URL to the user and ask how to handle the evidence. Use the 
 
 **Options:**
 1. **Upload to catbox (public URL)** -- promote to permanent hosting for PR embedding
-2. **Save locally** -- save to a stable OS-temp path (/tmp/lets-engineer/lets-demo-reel/)
+2. **Save locally** -- save to a stable OS-temp path (/tmp/lets-engineer/lets-record-demo/)
 3. **Recapture** -- provide instructions on what to change
 4. **Proceed without evidence** -- set evidence to null and proceed
 
@@ -78,7 +78,7 @@ For multiple files (static screenshots tier), save each file separately.
 
 ## Step 4: Return Output
 
-Return the structured output defined in the SKILL.md Output section: `Tier`, `Description`, and either `URL` (permanent catbox URL) or `Path` (local file path). The caller formats the evidence into the PR description. lets-demo-reel does not generate markdown.
+Return the structured output defined in the SKILL.md Output section: `Tier`, `Description`, and either `URL` (permanent catbox URL) or `Path` (local file path). The caller formats the evidence into the PR description. lets-record-demo does not generate markdown.
 
 ## Step 5: Cleanup
 

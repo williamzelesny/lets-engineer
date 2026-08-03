@@ -335,7 +335,7 @@ Fall back to numbered list in chat only when no blocking tool exists or the call
 
 ## Headless mode (shared)
 
-When the skill is invoked from an automated workflow such as LFG or any `disable-model-invocation` context, the skill runs in non-interactive mode (no synchronous user). The artifact is read by downstream skills (lets-doc-review, lets-work) and human reviewers (PR review).
+When the skill is invoked from an automated workflow such as LFG or any `disable-model-invocation` context, the skill runs in non-interactive mode (no synchronous user). The artifact is read by downstream skills (lets-review-docs, lets-work) and human reviewers (PR review).
 
 **Stage 2 is moot in headless mode.** Compose the internal draft (stage 1) as usual, but skip the chat-time compression — there is no synchronous user to confirm to, no call-outs to derive, no auto-proceed announcement. Route the internal draft directly into the plan body via the doc-shape table below.
 
@@ -354,7 +354,7 @@ When the skill is invoked from an automated workflow such as LFG or any `disable
 
 The `## Assumptions` section appears in non-interactive plans only. Interactive plans don't need it (Inferred bets either get user-corrected via call-outs and become Key Technical Decisions, are revised away, or were judged not-fork material by the keep test and dissolved into Implementation Units silently).
 
-This restores the audit visibility the original design intended (un-validated bets must not propagate as authoritative content), but surfaces them under their own label rather than hiding them. Downstream review (lets-doc-review, lets-work, human PR review) can scrutinize Assumptions specifically.
+This restores the audit visibility the original design intended (un-validated bets must not propagate as authoritative content), but surfaces them under their own label rather than hiding them. Downstream review (lets-review-docs, lets-work, human PR review) can scrutinize Assumptions specifically.
 
 ---
 

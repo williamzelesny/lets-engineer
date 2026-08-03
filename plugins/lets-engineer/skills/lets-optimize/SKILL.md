@@ -640,7 +640,7 @@ The experiment log and strategy digest remain in local `.context/...` scratch sp
 
 Present post-completion options via the platform question tool:
 
-1. **Run `/lets-code-review`** on the cumulative diff (baseline to final). Load the `lets-code-review` skill with `mode:autofix` on the optimization branch.
+1. **Run `/lets-review-code`** on the cumulative diff (baseline to final). Load the `lets-review-code` skill with `mode:autofix` on the optimization branch.
 2. **Run `/lets-compound`** to document the winning strategy as an institutional learning.
 3. **Create PR** from the optimization branch to the default branch.
 4. **Continue** with more experiments: re-enter Phase 3 with the current state. State re-read first.

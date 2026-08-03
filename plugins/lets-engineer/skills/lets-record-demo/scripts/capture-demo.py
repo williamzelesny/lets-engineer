@@ -761,7 +761,7 @@ Commands:
     p_save = sub.add_parser("save-local", help="Save artifact locally instead of uploading")
     p_save.add_argument("--file", required=True, help="Artifact file to save")
     p_save.add_argument("--branch", default="", help="Branch name for filename")
-    default_dir = "/tmp/lets-engineer/lets-demo-reel"
+    default_dir = "/tmp/lets-engineer/lets-record-demo"
     p_save.add_argument("--output-dir", default=default_dir, help="Target directory")
 
     args = parser.parse_args()

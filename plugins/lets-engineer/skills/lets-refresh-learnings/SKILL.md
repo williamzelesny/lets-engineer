@@ -172,7 +172,7 @@ Match investigation depth to the learning's specificity — a learning referenci
 
 The critical distinction is whether the drift is **cosmetic** (references moved but the solution is the same) or **substantive** (the solution itself changed):
 
-- **Update territory** — file paths moved, classes renamed, links broke, metadata drifted, but the core recommended approach is still how the code works. `lets-compound-refresh` fixes these directly.
+- **Update territory** — file paths moved, classes renamed, links broke, metadata drifted, but the core recommended approach is still how the code works. `lets-refresh-learnings` fixes these directly.
 - **Replace territory** — the recommended solution conflicts with current code, the architectural approach changed, or the pattern is no longer the preferred way. This means a new learning needs to be written. A replacement subagent writes the successor following `lets-compound`'s document format (frontmatter, problem, root cause, solution, prevention), using the investigation evidence already gathered. The orchestrator does not rewrite learnings inline — it delegates to a subagent for context isolation.
 
 **The boundary:** if you find yourself rewriting the solution section or changing what the learning recommends, stop — that is Replace, not Update.
@@ -591,7 +591,7 @@ Write a descriptive commit message that:
 ## Relationship to lets-compound
 
 - `lets-compound` captures a newly solved, verified problem
-- `lets-compound-refresh` maintains older learnings as the codebase evolves — both their individual accuracy and their collective design as a document set
+- `lets-refresh-learnings` maintains older learnings as the codebase evolves — both their individual accuracy and their collective design as a document set
 
 Use **Replace** only when the refresh process has enough real evidence to write a trustworthy successor. When evidence is insufficient, mark as stale and recommend `lets-compound` for when the user next encounters that problem area.
 

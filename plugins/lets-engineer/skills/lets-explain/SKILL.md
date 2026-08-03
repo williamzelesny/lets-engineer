@@ -9,16 +9,16 @@ allowed-tools: Bash(git *), Bash(gh *), Read, Grep, Glob, Write
 
 Produce an explanatory walkthrough of a change you did not write — **orientation first** (what changed, why, what to read first, where the risk is), **teaching depth second** (the patterns and the reasoning behind them). The walkthrough renders in chat; saving or posting it is opt-in.
 
-> **Explain, don't critique.** This skill helps a reader *understand* a change. It never flags bugs, assigns severity, or recommends fixes — that is `lets-code-review`'s job. When you finish, offer the handoff: understand here, critique there.
+> **Explain, don't critique.** This skill helps a reader *understand* a change. It never flags bugs, assigns severity, or recommends fixes — that is `lets-review-code`'s job. When you finish, offer the handoff: understand here, critique there.
 
 ## When to Use
 
 - Orienting to an unfamiliar PR before reviewing it
 - Onboarding to a change, or learning the patterns and reasoning behind it
 - Understanding a branch or commit range you did not author
-- Standalone, or as the comprehension step before `lets-code-review`
+- Standalone, or as the comprehension step before `lets-review-code`
 
-**Not for:** finding bugs or rating severity (`lets-code-review`), writing an author's value-first PR description (`lets-commit-push-pr`), or resolving review comments (`lets-resolve-pr-feedback`).
+**Not for:** finding bugs or rating severity (`lets-review-code`), writing an author's value-first PR description (`lets-commit-push-pr`), or resolving review comments (`lets-resolve-pr-feedback`).
 
 ## Argument Parsing
 
@@ -66,11 +66,11 @@ Explain-not-critique guardrail: if you notice an apparent bug, describe what the
 2. Then ask the user what to do with it, using the platform's blocking question tool (in Claude Code, pre-load `AskUserQuestion` via `ToolSearch` with `select:AskUserQuestion` before asking; fall back to a numbered list only when no blocking tool exists or the call errors). Offer the compatible options:
    - **Save** to `docs/walkthroughs/<slug>.md` (create the directory on demand; derive `<slug>` from the change).
    - **Post** as a PR comment via `gh` (only when the target is a PR).
-   - **Hand off to `lets-code-review`** for the same target — understand → critique.
+   - **Hand off to `lets-review-code`** for the same target — understand → critique.
    - **Nothing** — leave it in chat.
 
    Nothing is saved or posted without an explicit choice.
-3. Act on the selection. If the user chose the handoff, invoke `lets-code-review` with the same target.
+3. Act on the selection. If the user chose the handoff, invoke `lets-review-code` with the same target.
 
 ## Success Criteria
 

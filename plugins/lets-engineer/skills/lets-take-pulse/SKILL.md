@@ -13,7 +13,7 @@ allowed-tools:
 
 # Product Pulse
 
-`lets-product-pulse` queries the product's data sources for a given time window and produces a compact, single-page report covering usage, performance, errors, and followups. The report is saved to `docs/pulse-reports/` and the key points are surfaced in chat.
+`lets-take-pulse` queries the product's data sources for a given time window and produces a compact, single-page report covering usage, performance, errors, and followups. The report is saved to `docs/pulse-reports/` and the key points are surfaced in chat.
 
 The skill does not mutate the product, the database, or any external system. Its only writes are pulse settings appended to `.lets-engineer/config.local.yaml` (the unified CE local config, gitignored, machine-local) and the report file (`docs/pulse-reports/...`). MCP and other data-source tools are invoked read-only; if a tool offers write modes, do not use them.
 
@@ -92,7 +92,7 @@ Before asking any questions, read `STRATEGY.md` using the native file-read tool.
 
 Open the interview by surfacing what was extracted: announce that a strategy doc was found, show the seeded product name and the list of key metrics that will be carried into event/data setup, and invite the user to correct any of it before continuing.
 
-If `STRATEGY.md` does not exist, note that explicitly in chat: no strategy doc on file, running setup from scratch, and mention that `lets-strategy` can seed pulse later if run first.
+If `STRATEGY.md` does not exist, note that explicitly in chat: no strategy doc on file, running setup from scratch, and mention that `lets-strategize` can seed pulse later if run first.
 
 #### 1.1 Interview
 

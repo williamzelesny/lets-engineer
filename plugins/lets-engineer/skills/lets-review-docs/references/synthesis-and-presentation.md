@@ -393,7 +393,7 @@ The `<next stage>` substitution uses the document type from Phase 1:
 
 **Label adaptation:** when no decisions are queued to apply, the primary option drops the `Apply decisions and` prefix — the label should match what the system is doing. `Apply decisions and proceed` when fixes are queued; `Proceed` when nothing is queued.
 
-**Caller-context handling (implicit):** the terminal question's "Proceed to <next stage>" option is interpreted contextually by the agent from the visible conversation state. When lets-doc-review is invoked from inside another skill's flow (e.g., lets-brainstorm Phase 4 re-review, lets-plan phase 5.3.8), the agent does not fire a nested `/lets-plan` or `/lets-work` dispatch — it returns control to the caller's flow which continues its own logic. When invoked standalone, "Proceed" dispatches the appropriate next skill. No explicit caller-hint argument is required; if this implicit handling proves unreliable in practice, an explicit `nested:true` flag can be added as a follow-up.
+**Caller-context handling (implicit):** the terminal question's "Proceed to <next stage>" option is interpreted contextually by the agent from the visible conversation state. When lets-review-docs is invoked from inside another skill's flow (e.g., lets-brainstorm Phase 4 re-review, lets-plan phase 5.3.8), the agent does not fire a nested `/lets-plan` or `/lets-work` dispatch — it returns control to the caller's flow which continues its own logic. When invoked standalone, "Proceed" dispatches the appropriate next skill. No explicit caller-hint argument is required; if this implicit handling proves unreliable in practice, an explicit `nested:true` flag can be added as a follow-up.
 
 ### Iteration limit
 
@@ -407,7 +407,7 @@ Return "Review complete" as the terminal signal for callers, regardless of which
 - Do not add new sections or requirements the user didn't discuss
 - Do not over-engineer or add complexity
 - Do not create separate review files or add metadata sections
-- Do not modify caller skills (lets-brainstorm, lets-plan, or external plugin skills that invoke lets-doc-review)
+- Do not modify caller skills (lets-brainstorm, lets-plan, or external plugin skills that invoke lets-review-docs)
 
 ## Iteration Guidance
 

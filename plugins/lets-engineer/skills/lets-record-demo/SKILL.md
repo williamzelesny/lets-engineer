@@ -180,5 +180,5 @@ The `Description` is a 1-line summary derived from the capture hypothesis in Ste
 **Label convention:**
 - Browser reel, terminal recording, screenshot reel: label as "Demo"
 - Static screenshots: label as "Screenshots"
-- The caller applies the label when formatting. lets-demo-reel does not generate markdown.
+- The caller applies the label when formatting. lets-record-demo does not generate markdown.
 - Test output is never labeled "Demo" or "Screenshots"
