@@ -1,5 +1,5 @@
 ---
-name: lets-worktree
+name: lets-branch-off
 description: Create an isolated git worktree for parallel feature work or PR review. Use when starting work that should not disturb the current checkout, or when `lets-work` or `lets-code-review` offers a worktree option.
 allowed-tools: Bash(bash *worktree-manager.sh)
 ---

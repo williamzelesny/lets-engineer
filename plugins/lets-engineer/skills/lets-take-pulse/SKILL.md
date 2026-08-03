@@ -1,5 +1,5 @@
 ---
-name: lets-product-pulse
+name: lets-take-pulse
 description: "Generate a time-windowed pulse report on what users experienced and how the product performed - usage, quality, errors, signals worth investigating. Use when the user says 'run a pulse', 'show me the pulse', 'how are we doing', 'weekly recap', 'launch-day check', or passes a time window like '24h' or '7d'. Configures via .lets-engineer/config.local.yaml and saves reports to docs/pulse-reports/."
 argument-hint: "[lookback window, e.g. '24h', '7d', '1h'; default 24h]"
 allowed-tools:

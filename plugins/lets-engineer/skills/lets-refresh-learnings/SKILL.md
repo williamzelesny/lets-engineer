@@ -1,5 +1,5 @@
 ---
-name: lets-compound-refresh
+name: lets-refresh-learnings
 description: Refresh stale learning and pattern docs under docs/solutions/ by reviewing them against the current codebase, then updating, consolidating, or deleting drifted ones. Use when the user asks to "refresh my learnings", "audit docs/solutions/", "clean up stale learnings", or "consolidate overlapping docs", or when lets-compound flags an older doc as superseded. Do not trigger for general refactor, debugging, or code-review work unless the user has explicitly pointed at docs/solutions/.
 argument-hint: "[optional: scope hint — directory, filename, module, or keyword] [mode:headless] "
 ---
