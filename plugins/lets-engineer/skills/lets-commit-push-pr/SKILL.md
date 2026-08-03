@@ -94,7 +94,7 @@ If the working tree is clean and all commits are already pushed, this step is a 
 
 Otherwise, if the branch diff changes observable behavior (UI, CLI output, API behavior with runnable code, generated artifacts, workflow output) and evidence is not blocked (unavailable credentials, paid services, deploy-only infrastructure, hardware), ask: "This PR has observable behavior. Capture evidence for the PR description?"
 
-- **Capture now** — load `lets-demo-reel` with a target description from the branch diff. It returns `Tier`, `Description`, `URL`, `Path`. Exactly one of `URL`/`Path` contains a real value; the other is `"none"`. If `URL`, splice as a `## Demo` section. If `Path` (user chose local save), note in the body that a demo was recorded but is not embedded. If skipped, proceed without evidence.
+- **Capture now** — load `lets-record-demo` with a target description from the branch diff. It returns `Tier`, `Description`, `URL`, `Path`. Exactly one of `URL`/`Path` contains a real value; the other is `"none"`. If `URL`, splice as a `## Demo` section. If `Path` (user chose local save), note in the body that a demo was recorded but is not embedded. If skipped, proceed without evidence.
 - **Use existing evidence** — ask for the URL or markdown embed; splice as a `## Demo` section.
 - **Skip** — proceed without an evidence section.
 

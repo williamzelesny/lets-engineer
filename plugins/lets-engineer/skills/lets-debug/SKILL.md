@@ -194,7 +194,7 @@ If the user chose "Diagnosis only" at the end of Phase 2, skip this phase and go
 3. Implement the minimal fix — address the root cause and nothing else. Do not bundle drive-by refactors, formatting, or unrelated cleanup into a bug-fix change; those belong in separate commits.
 4. Verify the test passes
 5. Run the broader test suite for regressions
-6. Self-review the diff before declaring the fix done: read every changed line and check for style violations, missed edge cases, regressions in adjacent behavior, and missing test coverage for the fix. For non-trivial fixes (multiple files, risky surface area), also run the harness's lightweight review tool (e.g., `/review` in Claude Code; the equivalent in other harnesses) — not the full `lets-code-review` multi-agent flow, which is PR-tier and over-sized for a single bug fix.
+6. Self-review the diff before declaring the fix done: read every changed line and check for style violations, missed edge cases, regressions in adjacent behavior, and missing test coverage for the fix. For non-trivial fixes (multiple files, risky surface area), also run the harness's lightweight review tool (e.g., `/review` in Claude Code; the equivalent in other harnesses) — not the full `lets-review-code` multi-agent flow, which is PR-tier and over-sized for a single bug fix.
 
 **On a failed fix:** return to Phase 2 and *explicitly invalidate the current hypothesis* before forming a new one. State out loud what evidence ruled out the prior hypothesis, then form a new one with its own grounding observation and prediction. Do not retry variants of the same theory ("maybe it was the other branch", "let me also catch this case") — that is the rationalization spiral, not iteration.
 

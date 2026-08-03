@@ -2,7 +2,7 @@
 
 The shape of the explanatory walkthrough Stage 2 produces: one document, two layers, visually separated.
 
-> Render this in chat. It is a reader's orientation + teaching aid, not a review. Never include findings, severity ratings, or fix recommendations — `lets-code-review` owns critique.
+> Render this in chat. It is a reader's orientation + teaching aid, not a review. Never include findings, severity ratings, or fix recommendations — `lets-review-code` owns critique.
 
 ## Skeleton
 
@@ -44,4 +44,4 @@ Do not pad a small change to fill the skeleton, and do not let a large change bu
 
 ## Explain, don't critique
 
-If the diff contains something that looks like a bug, explain what the code does and let the reader draw their own conclusions. Do not label defects, assign severity, or recommend fixes. If the reader wants critique, offer the `lets-code-review` handoff in Stage 3.
+If the diff contains something that looks like a bug, explain what the code does and let the reader draw their own conclusions. Do not label defects, assign severity, or recommend fixes. If the reader wants critique, offer the `lets-review-code` handoff in Stage 3.

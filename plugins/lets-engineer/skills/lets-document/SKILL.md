@@ -26,7 +26,7 @@ allowed-tools:
 - Producing onboarding reference a new contributor can read to understand how the app functions
 - Keeping an existing how-it-works doc current as the code evolves (re-run to refresh)
 
-**Not for:** explaining a change you didn't write (`lets-explain`), capturing a recently solved problem (`lets-compound`), critiquing code (`lets-code-review`), or product requirements and plans (`lets-brainstorm`, `lets-plan`).
+**Not for:** explaining a change you didn't write (`lets-explain`), capturing a recently solved problem (`lets-compound`), critiquing code (`lets-review-code`), or product requirements and plans (`lets-brainstorm`, `lets-plan`).
 
 ## Interaction Method
 
@@ -90,7 +90,7 @@ Note where the doc lives in one line. Offer the natural next step: document anot
 
 ## What This Skill Does Not Do
 
-- Does not track staleness or auto-refresh. Refresh is user-initiated; there is no manifest or drift watcher (that overlaps `lets-compound-refresh`).
+- Does not track staleness or auto-refresh. Refresh is user-initiated; there is no manifest or drift watcher (that overlaps `lets-refresh-learnings`).
 - Does not publish to an external doc site, wiki, or hosted portal. Output is in-repo markdown only.
 - Does not generate API reference from code annotations or docstrings.
 - Does not document changes/diffs (`lets-explain`) or solved problems (`lets-compound`).

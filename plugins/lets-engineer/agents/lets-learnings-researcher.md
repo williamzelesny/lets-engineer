@@ -244,7 +244,7 @@ When no relevant learnings are found, say so explicitly, include the search cont
 This agent is invoked by:
 
 - `/lets-plan` — to inform planning with institutional knowledge and add depth during confidence checking
-- `/lets-code-review`, `/lets-optimize`, `/lets-ideate` — to surface prior learnings relevant to the change, optimization target, or ideation topic
+- `/lets-review-code`, `/lets-optimize`, `/lets-ideate` — to surface prior learnings relevant to the change, optimization target, or ideation topic
 - Standalone invocation before starting work in a documented area
 
 Output is consumed as prose — no downstream caller parses specific field labels out of it — so prioritize distilled, actionable takeaways over structural rigor.

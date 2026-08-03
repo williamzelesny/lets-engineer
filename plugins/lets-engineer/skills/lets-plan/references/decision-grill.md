@@ -19,7 +19,7 @@ Apply two filters before anything reaches the user:
 1. **Infer or scan first.** If repo context, documentation, or existing research can responsibly answer a fork, resolve it silently and drop it from the list. Only forks that genuinely cannot be inferred become questions. This preserves lets-plan's default bias toward inference — the grill raises the *ceiling* on questions for high-stakes work, it does not lower the *bar* for asking.
 2. **Order by dependency.** Ask a fork whose answer reshapes downstream forks first (resolve dependencies progressively). Re-evaluate the remaining list after each answer — a resolved upstream fork may collapse, reshape, or remove later ones.
 
-**Budget by stakes:** Deep plans cap at **5–8** forks; high-risk Standard plans cap at **3–5**. Forks below the cut are **not dropped silently** — record them in Open Questions with their detected branches so the confidence check and `lets-doc-review` still see them, and state plainly which forks fell through the budget.
+**Budget by stakes:** Deep plans cap at **5–8** forks; high-risk Standard plans cap at **3–5**. Forks below the cut are **not dropped silently** — record them in Open Questions with their detected branches so the confidence check and `lets-review-docs` still see them, and state plainly which forks fell through the budget.
 
 ## 2.5.3 Run the Grill
 

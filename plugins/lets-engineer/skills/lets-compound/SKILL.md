@@ -38,7 +38,7 @@ Headless mode is intended for automations and skill-to-skill invocation where no
 
 **Git branch (pre-resolved):** !`git rev-parse --abbrev-ref HEAD 2>/dev/null || true`
 
-If the line above resolved to a plain branch name (like `feat/my-branch`), include it in the `lets-sessions` invocation payload in Phase 1 so the orchestrator does not waste a turn deriving it. If it still contains a backtick command string or is empty, omit it and let `lets-sessions` derive it at runtime.
+If the line above resolved to a plain branch name (like `feat/my-branch`), include it in the `lets-search-sessions` invocation payload in Phase 1 so the orchestrator does not waste a turn deriving it. If it still contains a backtick command string or is empty, omit it and let `lets-search-sessions` derive it at runtime.
 
 ## Support Files
 
@@ -77,7 +77,7 @@ for relevant knowledge to help the Compound process? This adds
 time and token usage.
 ```
 
-If the user says yes, invoke `lets-sessions` in Phase 1 (see step 4). If no, skip it. Do not ask this in lightweight mode or headless mode.
+If the user says yes, invoke `lets-search-sessions` in Phase 1 (see step 4). If no, skip it. Do not ask this in lightweight mode or headless mode.
 
 ---
 
@@ -116,7 +116,7 @@ Launch research subagents. Each returns text data to the orchestrator.
 
 **Dispatch order:**
 - Launch `Context Analyzer`, `Solution Extractor`, and `Related Docs Finder` in parallel (background)
-- **Then** invoke the `lets-sessions` skill via the platform's skill-invocation primitive (see step 4 below) — only if the user opted in to session history. The skill call is synchronous from this orchestrator's main-context turn, but the already-dispatched background subagents continue running in parallel underneath, so the wall-clock benefit is preserved (`max(lets-sessions, slowest background subagent)`, not their sum). Issuing the skill call before the parallel block would serialize lets-sessions in front of the research subagents and regress wall-clock time.
+- **Then** invoke the `lets-search-sessions` skill via the platform's skill-invocation primitive (see step 4 below) — only if the user opted in to session history. The skill call is synchronous from this orchestrator's main-context turn, but the already-dispatched background subagents continue running in parallel underneath, so the wall-clock benefit is preserved (`max(lets-search-sessions, slowest background subagent)`, not their sum). Issuing the skill call before the parallel block would serialize lets-search-sessions in front of the research subagents and regress wall-clock time.
 
 <parallel_tasks>
 
@@ -187,11 +187,11 @@ Launch research subagents. Each returns text data to the orchestrator.
 
 </parallel_tasks>
 
-#### 4. **Session History via `lets-sessions`** (synchronous skill call, after launching the parallel block — only if the user opted in)
+#### 4. **Session History via `lets-search-sessions`** (synchronous skill call, after launching the parallel block — only if the user opted in)
    - **Skip entirely** if the user declined session history in the follow-up question, if running in lightweight mode, or if running in headless mode.
-   - Invoke the `lets-sessions` skill via the platform's skill-invocation primitive (`Skill` in Claude Code, `Skill` in Codex, the equivalent on Gemini/Pi). Pass the dispatch payload below as the skill argument string. `lets-sessions` runs in main context — it owns discovery, branch/keyword filtering, scan-window selection, the deep-dive cap, per-session extraction to a `mktemp` scratch dir, and dispatch of the synthesis-only `lets-session-historian` subagent. The compound orchestrator only needs to pass the topic and time window and read back the findings text.
+   - Invoke the `lets-search-sessions` skill via the platform's skill-invocation primitive (`Skill` in Claude Code, `Skill` in Codex, the equivalent on Gemini/Pi). Pass the dispatch payload below as the skill argument string. `lets-search-sessions` runs in main context — it owns discovery, branch/keyword filtering, scan-window selection, the deep-dive cap, per-session extraction to a `mktemp` scratch dir, and dispatch of the synthesis-only `lets-session-historian` subagent. The compound orchestrator only needs to pass the topic and time window and read back the findings text.
 
-   **Dispatch payload — keep tight.** A long, keyword-rich payload licenses lets-sessions to keep widening. Use this shape:
+   **Dispatch payload — keep tight.** A long, keyword-rich payload licenses lets-search-sessions to keep widening. Use this shape:
 
    - **Pre-resolved context** (only if values resolved cleanly above; otherwise omit): repo name, current git branch.
    - **Time window**: explicit `7 days` unless the documented problem clearly spans a longer arc.
@@ -207,7 +207,7 @@ Launch research subagents. Each returns text data to the orchestrator.
      - Related context
      ```
 
-   Do not append additional context blocks, exclusion lists, or topic-keyword bullets — verbose payloads give lets-sessions license to keep widening the search and rapidly compound wall time. If keyword search is needed, lets-sessions owns that decision internally based on the topic.
+   Do not append additional context blocks, exclusion lists, or topic-keyword bullets — verbose payloads give lets-search-sessions license to keep widening the search and rapidly compound wall time. If keyword search is needed, lets-search-sessions owns that decision internally based on the topic.
    - Returns: structured digest of findings from prior sessions, or "no relevant prior sessions" if none found.
 
 ### Phase 2: Assembly & Write
@@ -231,7 +231,7 @@ The orchestrating agent (main conversation) performs these steps:
 
    When updating an existing doc, preserve its file path and frontmatter structure. Update the solution, code examples, prevention tips, and any stale references. Add a `last_updated: YYYY-MM-DD` field to the frontmatter. Do not change the title unless the problem framing has materially shifted.
 
-3. **Incorporate session history findings** (if available). When `lets-sessions` returned relevant prior-session context:
+3. **Incorporate session history findings** (if available). When `lets-search-sessions` returned relevant prior-session context:
    - Fold investigation dead ends and failed approaches into the **What Didn't Work** section (bug track) or **Context** section (knowledge track)
    - Use cross-session patterns to enrich the **Prevention** or **Why This Matters** sections
    - Tag session-sourced content with "(session history)" so its origin is clear to future readers
@@ -250,9 +250,9 @@ When creating a new doc, preserve the section order from `assets/resolution-temp
 
 After writing the new learning, decide whether this new solution is evidence that older docs should be refreshed.
 
-`lets-compound-refresh` is **not** a default follow-up. Use it selectively when the new learning suggests an older learning or pattern doc may now be inaccurate.
+`lets-refresh-learnings` is **not** a default follow-up. Use it selectively when the new learning suggests an older learning or pattern doc may now be inaccurate.
 
-It makes sense to invoke `lets-compound-refresh` when one or more of these are true:
+It makes sense to invoke `lets-refresh-learnings` when one or more of these are true:
 
 1. A related learning or pattern doc recommends an approach that the new fix now contradicts
 2. The new fix clearly supersedes an older documented solution
@@ -261,7 +261,7 @@ It makes sense to invoke `lets-compound-refresh` when one or more of these are t
 5. The Related Docs Finder surfaced high-confidence refresh candidates in the same problem space
 6. The Related Docs Finder reported **moderate overlap** with an existing doc — there may be consolidation opportunities that benefit from a focused review
 
-It does **not** make sense to invoke `lets-compound-refresh` when:
+It does **not** make sense to invoke `lets-refresh-learnings` when:
 
 1. No related docs were found
 2. Related docs still appear consistent with the new learning
@@ -270,12 +270,12 @@ It does **not** make sense to invoke `lets-compound-refresh` when:
 
 Use these rules:
 
-- If there is **one obvious stale candidate**, invoke `lets-compound-refresh` with a narrow scope hint after the new learning is written
+- If there is **one obvious stale candidate**, invoke `lets-refresh-learnings` with a narrow scope hint after the new learning is written
 - If there are **multiple candidates in the same area**, ask the user whether to run a targeted refresh for that module, category, or pattern set
-- If context is already tight or you are in lightweight mode, do not expand into a broad refresh automatically; instead recommend `lets-compound-refresh` as the next step with a scope hint
-- **In headless mode**, never invoke `lets-compound-refresh` and never ask the user. Surface the recommended scope hint in the terminal report's "Refresh recommendation" line and let the caller decide
+- If context is already tight or you are in lightweight mode, do not expand into a broad refresh automatically; instead recommend `lets-refresh-learnings` as the next step with a scope hint
+- **In headless mode**, never invoke `lets-refresh-learnings` and never ask the user. Surface the recommended scope hint in the terminal report's "Refresh recommendation" line and let the caller decide
 
-When invoking or recommending `lets-compound-refresh`, be explicit about the argument to pass. Prefer the narrowest useful scope:
+When invoking or recommending `lets-refresh-learnings`, be explicit about the argument to pass. Prefer the narrowest useful scope:
 
 - **Specific file** when one learning or pattern doc is the likely stale artifact
 - **Module or component name** when several related docs may need review
@@ -284,14 +284,14 @@ When invoking or recommending `lets-compound-refresh`, be explicit about the arg
 
 Examples:
 
-- `/lets-compound-refresh plugin-versioning-requirements`
-- `/lets-compound-refresh payments`
-- `/lets-compound-refresh performance-issues`
-- `/lets-compound-refresh critical-patterns`
+- `/lets-refresh-learnings plugin-versioning-requirements`
+- `/lets-refresh-learnings payments`
+- `/lets-refresh-learnings performance-issues`
+- `/lets-refresh-learnings critical-patterns`
 
 A single scope hint may still expand to multiple related docs when the change is cross-cutting within one domain, category, or pattern area.
 
-Do not invoke `lets-compound-refresh` without an argument unless the user explicitly wants a broad sweep.
+Do not invoke `lets-refresh-learnings` without an argument unless the user explicitly wants a broad sweep.
 
 Always capture the new learning first. Refresh is a targeted maintenance follow-up, not a prerequisite for documentation.
 
@@ -390,7 +390,7 @@ re-run /lets-compound in a fresh session.
 
 **No subagents are launched. No parallel tasks. One file written.**
 
-In lightweight mode, the overlap check is skipped (no Related Docs Finder subagent). This means lightweight mode may create a doc that overlaps with an existing one. That is acceptable — `lets-compound-refresh` will catch it later. Only suggest `lets-compound-refresh` if there is an obvious narrow refresh target. Do not broaden into a large refresh sweep from a lightweight session.
+In lightweight mode, the overlap check is skipped (no Related Docs Finder subagent). This means lightweight mode may create a doc that overlaps with an existing one. That is acceptable — `lets-refresh-learnings` will catch it later. Only suggest `lets-refresh-learnings` if there is an obvious narrow refresh target. Do not broaden into a large refresh sweep from a lightweight session.
 
 ---
 
@@ -469,7 +469,7 @@ Track: <bug | knowledge>
 Category: <category>
 Overlap: <none | low | moderate — see <path> | high — existing doc updated>
 Instruction-file edit: <none needed | applied to <path> | gap noted, not applied>
-Refresh recommendation: <none | scope hint for /lets-compound-refresh>
+Refresh recommendation: <none | scope hint for /lets-refresh-learnings>
 
 Documentation complete
 ```

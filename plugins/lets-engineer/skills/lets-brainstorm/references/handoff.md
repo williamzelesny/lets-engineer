@@ -46,12 +46,12 @@ What would you like to do next? (Pick a number or describe what you want.)
 Present only the options that apply. Renumber so visible options stay contiguous starting at 1.
 
 1. **Plan implementation with `lets-plan` (Recommended)** - Move to `lets-plan` for structured implementation planning. Shown only when `Resolve Before Planning` is empty.
-2. **Agent review of requirements doc with `lets-doc-review`** - Dispatch reviewer agents to check the doc for coherence, feasibility, scope, and other persona-specific issues; auto-apply safe fixes; route remaining findings interactively. Shown only when a requirements document exists.
+2. **Agent review of requirements doc with `lets-review-docs`** - Dispatch reviewer agents to check the doc for coherence, feasibility, scope, and other persona-specific issues; auto-apply safe fixes; route remaining findings interactively. Shown only when a requirements document exists.
 3. **Build it now with `lets-work` (skip planning)** - Skip planning and move to `lets-work`; suited to lightweight, well-defined changes. Shown only when `Resolve Before Planning` is empty **and** scope is lightweight, success criteria are clear, scope boundaries are clear, and no meaningful technical or research questions remain (the "direct-to-work gate").
 4. **More clarifying questions to sharpen the doc** - Keep refining scope, edge cases, constraints, and preferences through further dialogue. Always shown.
 5. **Done for now** - Pause; the requirements doc is saved and can be resumed later. Always shown.
 
-**Post-review nudge (subsequent rounds only):** If the user has already run `lets-doc-review` this session and residual P0/P1 findings remain unaddressed, add a one-line prose nudge adjacent to the menu (e.g., "Document review flagged 2 P1 findings you may want to address — pick \"Agent review of requirements doc\" to run another pass."). Reference the option by label, not number: the menu renumbers when `Resolve Before Planning` hides `Plan implementation` and `Build it now`, so a hardcoded option number can point users at the wrong action. Do not add a separate menu option; reuse the existing agent-review option.
+**Post-review nudge (subsequent rounds only):** If the user has already run `lets-review-docs` this session and residual P0/P1 findings remain unaddressed, add a one-line prose nudge adjacent to the menu (e.g., "Document review flagged 2 P1 findings you may want to address — pick \"Agent review of requirements doc\" to run another pass."). Reference the option by label, not number: the menu renumbers when `Resolve Before Planning` hides `Plan implementation` and `Build it now`, so a hardcoded option number can point users at the wrong action. Do not add a separate menu option; reuse the existing agent-review option.
 
 #### 4.2 Handle the Selected Option
 
@@ -61,9 +61,9 @@ Selections may be the literal option label (when the user types the label or a c
 
 Immediately load the `lets-plan` skill in the current session. Pass the requirements document path when one exists; otherwise pass a concise summary of the finalized brainstorm decisions. Do not print the closing summary first.
 
-**If user selects "Agent review of requirements doc with `lets-doc-review`":**
+**If user selects "Agent review of requirements doc with `lets-review-docs`":**
 
-Load the `lets-doc-review` skill, passing the requirements document path as the argument. When lets-doc-review returns "Review complete", return to the Phase 4 options and re-render the menu (the doc may have changed, so re-evaluate `Resolve Before Planning`, direct-to-work gate, and residual findings). If residual P0/P1 findings remain unaddressed, include the post-review nudge above the menu. Do not show the closing summary yet.
+Load the `lets-review-docs` skill, passing the requirements document path as the argument. When lets-review-docs returns "Review complete", return to the Phase 4 options and re-render the menu (the doc may have changed, so re-evaluate `Resolve Before Planning`, direct-to-work gate, and residual findings). If residual P0/P1 findings remain unaddressed, include the post-review nudge above the menu. Do not show the closing summary yet.
 
 **If user selects "Build it now with `lets-work` (skip planning)":**
 

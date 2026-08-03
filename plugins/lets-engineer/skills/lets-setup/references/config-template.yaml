@@ -12,7 +12,7 @@
 # work_delegate_effort: high     # minimal | low | medium | high | xhigh (omit to use ~/.codex/config.toml default)
 
 # --- Product pulse ---
-# Settings written by /lets-product-pulse first-run interview. Re-run the skill with
+# Settings written by /lets-take-pulse first-run interview. Re-run the skill with
 # argument `setup` or `reconfigure` to edit interactively.
 
 # pulse_product_name: "Spiral"                          # used in report titles (no default)
