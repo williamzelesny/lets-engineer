@@ -45,7 +45,7 @@ Resolve the port with `bash scripts/resolve-port.sh --type <type>`.
 
 ### 1.3 Start the server
 
-Start the dev server in the background, log output to a temp file. Probe `http://localhost:<port>` for up to 30 seconds. If it doesn't come up, show the last 20 lines of the log and ask the user what to do.
+Start the dev server in the background, log output to a temp file. Probe `http://localhost:<port>` for up to 30 seconds. If it doesn't come up, show the last 20 lines of the log and ask the user what to do, using the platform's blocking question tool (in Claude Code, pre-load `AskUserQuestion` via `ToolSearch` with `select:AskUserQuestion`; fall back to numbered options in chat only when no blocking tool exists or the call errors). Never skip the question silently.
 
 ### 1.4 Open in browser
 
