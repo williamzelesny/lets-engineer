@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1)](LICENSE)
 ![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757?logo=claude&logoColor=white)
 
-`lets-engineer` is a toolkit of **27 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
+`lets-engineer` is a toolkit of **28 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
 
 ## The pipeline
 
@@ -107,6 +107,7 @@ Every skill you invoke is named to finish the sentence its prefix starts: `lets-
 | `lets-compound` | Document a solved problem so your team's knowledge compounds |
 | `lets-refresh-learnings` | Refresh and consolidate stale learnings under `docs/solutions/` |
 | `lets-document` | Document how the app works — architecture, functionality, business processes — as durable team reference in `docs/how-it-works/` |
+| `lets-model-domain` | Build the shared domain language — a `CONTEXT.md` glossary plus decision records under `docs/decisions/` |
 | `lets-search-sessions` | Search and query past coding-agent session history (Claude Code, Codex, Cursor) |
 
 **Stack styles & meta**
