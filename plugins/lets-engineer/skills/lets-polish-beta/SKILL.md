@@ -37,7 +37,9 @@ Route by type to the matching recipe reference for start command and port defaul
 | `remix` | `references/dev-server-remix.md` |
 | `sveltekit` | `references/dev-server-sveltekit.md` |
 | `procfile` | `references/dev-server-procfile.md` |
-| `unknown` | Ask the user how to start the project |
+| `unknown` | Ask the user how to start the project (see below) |
+
+When the type is `unknown`, ask how to start the project using the platform's blocking question tool (in Claude Code, pre-load `AskUserQuestion` via `ToolSearch` with `select:AskUserQuestion`; fall back to numbered options in chat only when no blocking tool exists or the call errors). Never skip the question silently.
 
 For framework types that need a package manager, run `bash scripts/resolve-package-manager.sh` and substitute the result into the start command.
 
@@ -45,7 +47,7 @@ Resolve the port with `bash scripts/resolve-port.sh --type <type>`.
 
 ### 1.3 Start the server
 
-Start the dev server in the background, log output to a temp file. Probe `http://localhost:<port>` for up to 30 seconds. If it doesn't come up, show the last 20 lines of the log and ask the user what to do.
+Start the dev server in the background, log output to a temp file. Probe `http://localhost:<port>` for up to 30 seconds. If it doesn't come up, show the last 20 lines of the log and ask the user what to do, using the platform's blocking question tool (in Claude Code, pre-load `AskUserQuestion` via `ToolSearch` with `select:AskUserQuestion`; fall back to numbered options in chat only when no blocking tool exists or the call errors). Never skip the question silently.
 
 ### 1.4 Open in browser
 

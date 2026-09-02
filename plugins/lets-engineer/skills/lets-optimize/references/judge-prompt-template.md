@@ -1,12 +1,12 @@
 # Judge Evaluation Prompt Template
 
-This template is used by the orchestrator to dispatch batched LLM-as-judge evaluation calls. Each judge sub-agent evaluates a batch of sampled output items and returns structured JSON scores.
+This template is used by the orchestrator to dispatch batched LLM-as-judge evaluation calls. Each judge subagent evaluates a batch of sampled output items and returns structured JSON scores.
 
 The orchestrator:
 1. Reads the experiment's output
 2. Selects samples per the stratification config (using fixed seed)
 3. Groups samples into batches of `judge.batch_size`
-4. Dispatches `ceil(sample_size / batch_size)` parallel sub-agents using this template
+4. Dispatches `ceil(sample_size / batch_size)` parallel subagents using this template
 5. Aggregates returned JSON scores
 
 ---
@@ -107,4 +107,4 @@ Rules:
 - The rubric is part of the immutable measurement harness -- the experiment agent cannot modify it
 - The `ambiguous` flag on items helps the orchestrator identify noisy evaluations without forcing bad scores
 - For singleton evaluation, the orchestrator provides cluster summaries (not full contents) to keep judge context lean
-- Each sub-agent evaluates one batch independently -- sub-agents do not see each other's results
+- Each subagent evaluates one batch independently -- subagents do not see each other's results
