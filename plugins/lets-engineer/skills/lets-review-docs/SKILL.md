@@ -156,6 +156,7 @@ Each agent receives the prompt built from the subagent template included below w
 | `{document_type}` | "requirements" or "plan" from Phase 1 classification |
 | `{document_path}` | Path to the document |
 | `{origin_path}` | Value of the document's `origin:` frontmatter field if present, or the literal string `none` if absent. Personas that adapt on origin (product-lens, adversarial, scope-guardian) read this slot to gate technique suppression — they do NOT re-parse frontmatter themselves. Extract this once during Phase 1 reading. |
+| `{glossary_path}` | Path to the repo's `CONTEXT.md` if one exists, or the per-area glossary a root `CONTEXT-MAP.md` names for the area this document covers; the literal string `none` if there is no glossary. Discover this once during Phase 1 reading, the same way `{origin_path}` is extracted. `lets-coherence-reviewer` is the consumer — it owns terminology; other personas may ignore the slot. |
 | `{document_content}` | Full text of the document |
 | `{decision_primer}` | Cumulative prior-round decisions in the current session, or an empty `<prior-decisions>` block on round 1. See "Decision primer" below. |
 
