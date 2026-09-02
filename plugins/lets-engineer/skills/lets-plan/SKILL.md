@@ -40,7 +40,7 @@ If the input is present but unclear or underspecified, do not abandon — ask on
 6. **Keep the plan portable** - The plan should work as a living document, review artifact, or issue body without embedding tool-specific executor instructions.
 7. **Carry execution posture lightly when it matters** - If the request, origin document, or repo context clearly implies test-first, characterization-first, or another non-default execution posture, reflect that in the plan as a lightweight signal. Do not turn the plan into step-by-step execution choreography.
 8. **Honor user-named resources** - When the user names a specific resource — a CLI, MCP server, URL, file, doc link, or prior artifact — treat it as authoritative input, not a suggestion. Discover it if unknown (`command -v`, fetch, read) before assuming it's unavailable. Use it in place of generic alternatives. If it fails or doesn't exist, say so explicitly rather than silently substituting.
-9. **Speak the project's language** - When a `CONTEXT.md` glossary exists, read it and name things in the plan the way it names them. A synonym introduced in a plan propagates into the code that implements it.
+9. **Speak the project's language** - When a `CONTEXT.md` glossary exists — or a `CONTEXT-MAP.md` naming per-area glossaries — read it and name things in the plan the way it names them. A synonym introduced in a plan propagates into the code that implements it.
 
 ## Plan Quality Bar
 

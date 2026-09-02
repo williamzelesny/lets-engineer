@@ -31,7 +31,6 @@ Determine how to proceed based on what was provided in `<input_document>`.
    - Identify files likely to change based on the prompt
    - Find existing test files for those areas (search for test/spec files that import, reference, or share names with the implementation files)
    - Note local patterns and conventions in the affected areas
-   - Read `CONTEXT.md` if it exists, so anything you name matches the project's domain language
 
 2. **Assess complexity and route**
 
@@ -284,6 +283,7 @@ Determine how to proceed based on what was provided in `<input_document>`.
 
    - The plan should reference similar code - read those files first
    - Match naming conventions exactly
+   - Name things the way `CONTEXT.md` names them when a glossary exists, or the per-area glossaries a `CONTEXT-MAP.md` points to
    - Reuse existing components where possible
    - Follow project coding standards (see AGENTS.md; use CLAUDE.md only if the repo still keeps a compatibility shim)
    - When in doubt, grep for similar implementations

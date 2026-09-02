@@ -165,7 +165,7 @@ required_fields:
           batch_size:
             type: integer
             default: 5
-            description: "Number of samples per judge sub-agent batch. Controls parallelism vs overhead."
+            description: "Number of samples per judge subagent batch. Controls parallelism vs overhead."
           minimum_improvement:
             type: number
             default: 0.3

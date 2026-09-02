@@ -409,7 +409,7 @@ This is progress reporting, not a blocking confirmation.
 
 Before spawning subagents, find the file paths (not contents) of all relevant standards files for the `project-standards` persona. Use the native file-search/glob tool to locate:
 
-1. Use the native file-search tool (e.g., Glob in Claude Code) to find all `**/CLAUDE.md`, `**/AGENTS.md`, and `**/CONTEXT.md` in the repo. A `CONTEXT.md` is a standards file of a particular kind: it fixes what the project's domain terms mean, so a diff that uses one against its definition violates a written rule the same way a frontmatter breach does.
+1. Use the native file-search tool (e.g., Glob in Claude Code) to find all `**/CLAUDE.md`, `**/AGENTS.md`, and `**/CONTEXT.md` in the repo. The persona's own definition explains how it applies each kind.
 2. Filter to those whose directory is an ancestor of at least one changed file. A standards file governs all files below it (e.g., `plugins/lets-engineer/AGENTS.md` applies to everything under `plugins/lets-engineer/`).
 
 Pass the resulting path list to the `project-standards` persona inside a `<standards-paths>` block in its review context (see Stage 4). The persona reads the files itself, targeting only the sections relevant to the changed file types. This keeps the orchestrator's work cheap (path discovery only) and avoids bloating the subagent prompt with content the reviewer may not fully need.

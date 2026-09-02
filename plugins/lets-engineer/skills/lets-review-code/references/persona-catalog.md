@@ -13,7 +13,7 @@ Spawned on every review regardless of diff content.
 | `correctness` | `lets-correctness-reviewer` | Logic errors, edge cases, state bugs, error propagation, intent compliance |
 | `testing` | `lets-testing-reviewer` | Coverage gaps, weak assertions, brittle tests, missing edge case tests |
 | `maintainability` | `lets-maintainability-reviewer` | Coupling, complexity, naming, dead code, premature abstraction |
-| `project-standards` | `lets-project-standards-reviewer` | CLAUDE.md and AGENTS.md compliance -- frontmatter, references, naming, cross-platform portability, tool selection |
+| `project-standards` | `lets-project-standards-reviewer` | CLAUDE.md, AGENTS.md, and CONTEXT.md compliance -- frontmatter, references, naming, domain terminology, cross-platform portability, tool selection |
 
 **CE agents (unstructured output, synthesized separately):**
 
