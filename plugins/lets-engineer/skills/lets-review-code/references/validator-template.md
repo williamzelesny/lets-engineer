@@ -1,6 +1,6 @@
-# Validator Sub-agent Prompt Template
+# Validator Subagent Prompt Template
 
-This template is used by Stage 5b to spawn one validator sub-agent per surviving finding before externalization. The validator's job is **independent re-verification**, not re-reasoning. It is a fresh second opinion, not a critic of the original persona's analysis.
+This template is used by Stage 5b to spawn one validator subagent per surviving finding before externalization. The validator's job is **independent re-verification**, not re-reasoning. It is a fresh second opinion, not a critic of the original persona's analysis.
 
 ---
 

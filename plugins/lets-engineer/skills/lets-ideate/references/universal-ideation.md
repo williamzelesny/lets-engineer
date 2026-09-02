@@ -32,7 +32,7 @@ When the user provides rich context up front (a paste, a brief, an existing draf
 
 Before generating, decompose the topic into 3-5 orthogonal **axes** that name *what aspects of the subject to think about*. Frames in "How to generate" determine *how to think* (the lens); axes determine *what to think on* (the surface). Without explicit axes, the same topic interpreted six ways through six lenses still leaves most of the surface unexamined — lens diversity does not produce surface coverage on its own.
 
-This step is the facilitator's own analysis — no sub-agent, no additional research. The Phase 1 grounding supplies the substance.
+This step is the facilitator's own analysis — no subagent, no additional research. The Phase 1 grounding supplies the substance.
 
 Axes should be:
 

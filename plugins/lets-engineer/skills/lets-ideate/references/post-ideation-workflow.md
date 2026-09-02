@@ -4,7 +4,7 @@ Read this file after Phase 2 ideation agents return and the orchestrator has mer
 
 ## Phase 3: Adversarial Filtering
 
-Review every candidate idea critically. The orchestrator performs this filtering directly -- do not dispatch sub-agents for critique.
+Review every candidate idea critically. The orchestrator performs this filtering directly -- do not dispatch subagents for critique.
 
 Do not generate replacement ideas in this phase unless explicitly refining.
 
@@ -18,7 +18,7 @@ Rejection criteria:
 - too expensive relative to likely value
 - already covered by existing workflows or docs
 - interesting but better handled as a brainstorm variant, not a product improvement
-- **unjustified — no articulated basis** (sub-agent failed to provide `direct:`, `external:`, or `reasoned:` justification, or the stated basis does not actually support the claimed move)
+- **unjustified — no articulated basis** (subagent failed to provide `direct:`, `external:`, or `reasoned:` justification, or the stated basis does not actually support the claimed move)
 - **below ambition floor** (fails the meeting-test: would not warrant team discussion — except when Phase 0.5 detected tactical focus signals, in which case this criterion is waived)
 - **subject-replacement** (abandons or replaces the subject of ideation rather than operating on it — e.g., "pivot to an unrelated domain," "become a different organization")
 - **scope overrun** (expands beyond the asked scope rather than ideating within it — e.g., proposes changes to the whole product when the user asked about one flow, stage, or section). Allowed only when the basis explicitly justifies the expansion; default is reject or downgrade.
@@ -181,7 +181,7 @@ Before finishing, check:
 - when Phase 1.5 produced an axis list, the survivor set spreads across axes rather than clustering on one — and any axis with zero survivors is noted as a deliberate gap in the rejection summary, not silently absent
 - the candidate list was generated before filtering
 - the original many-ideas -> critique -> survivors mechanism was preserved
-- if sub-agents were used, they improved diversity without replacing the core workflow
+- if subagents were used, they improved diversity without replacing the core workflow
 - every rejected idea has a reason
 - survivors are materially better than a naive "give me ideas" list
 - persistence followed user choice — terminal-only sessions did not write a file
