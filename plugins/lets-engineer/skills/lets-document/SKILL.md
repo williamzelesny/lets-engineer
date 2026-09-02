@@ -46,7 +46,8 @@ Interpret any argument as the topic to document — a subsystem (`billing`), a f
 2. **Verify before claiming.** Every structural claim — a component, a flow, a boundary — must be grounded in actual source, not guessed. If you cannot ground it, leave it out or mark it open. Hallucinated architecture is worse than a gap.
 3. **Teaching depth, not a terse reference.** Write for a contributor learning the system: explain how it works and why, in plain language. A reader should come away able to explain the topic, not just look up a name.
 4. **Refresh, don't churn.** On a re-run, update only what the code's facts changed. Preserve every word the human wrote. Never silently overwrite an authored section — surface a conflict instead.
-5. **Repo-relative paths only.** Every path in a generated doc is relative to the repo root (e.g., `app/services/billing.rb`), never absolute. Absolute paths break portability across machines and teammates.
+5. **Speak the project's language.** When a `CONTEXT.md` glossary exists — or a `CONTEXT-MAP.md` naming per-area glossaries — read it and write the doc in its terms. This doc is what a new contributor reads to learn the domain, so a synonym introduced here teaches the wrong word to exactly the person who does not yet know the right one.
+6. **Repo-relative paths only.** Every path in a generated doc is relative to the repo root (e.g., `app/services/billing.rb`), never absolute. Absolute paths break portability across machines and teammates.
 
 ## Execution Flow
 

@@ -115,7 +115,7 @@ Report what changed in one or two lines — terms added or sharpened, records wr
 
 ## How Other Skills Use This
 
-`CONTEXT.md` is a shared asset, so name it when handing off. Any skill that names things — `lets-brainstorm`, `lets-plan`, `lets-work`, `lets-review-code` — should read it for vocabulary and match it in what they write. Reading the glossary is a one-line habit, not a reason to invoke this skill; invoke it when the model is *changing*.
+`CONTEXT.md` is a shared asset, so name it when handing off. Any skill that names things — `lets-brainstorm`, `lets-plan`, `lets-work`, `lets-document`, and the reviews in `lets-review-code` and `lets-review-docs` — should read it for vocabulary and match it in what they write. Reading the glossary is a one-line habit, not a reason to invoke this skill; invoke it when the model is *changing*.
 
 ## What This Skill Does Not Do
 
