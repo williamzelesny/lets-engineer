@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Code Review Findings",
-  "description": "Structured output schema for code review sub-agents",
+  "description": "Structured output schema for code review subagents",
   "type": "object",
   "required": ["reviewer", "findings", "residual_risks", "testing_gaps"],
   "properties": {

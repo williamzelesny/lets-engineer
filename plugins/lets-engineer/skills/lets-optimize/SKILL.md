@@ -493,10 +493,10 @@ For each completed experiment, **immediately**:
    - Apply stratified sampling per `metric.judge.stratification` config (using `sample_seed`)
    - Group samples into batches of `metric.judge.batch_size`
    - Fill the judge prompt template (`references/judge-prompt-template.md`) for each batch
-   - Dispatch `ceil(sample_size / batch_size)` parallel judge sub-agents
-   - Each sub-agent returns structured JSON scores
+   - Dispatch `ceil(sample_size / batch_size)` parallel judge subagents
+   - Each subagent returns structured JSON scores
    - Aggregate scores: compute the configured primary judge field from `metric.judge.scoring.primary` (which should match `metric.primary.name`) plus any `scoring.secondary` values
-   - If `singleton_sample > 0`: also dispatch singleton evaluation sub-agents
+   - If `singleton_sample > 0`: also dispatch singleton evaluation subagents
 
 6. **If gates pass AND primary type is `hard`**:
    - Use the metric value directly from the measurement output

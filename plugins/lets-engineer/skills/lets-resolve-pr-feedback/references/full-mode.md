@@ -184,7 +184,7 @@ Record the validation outcome (command run, pass/fail counts, any pre-existing f
 
 ## 7. Commit and Push
 
-1. Stage only files reported by sub-agents and commit with a message referencing the PR:
+1. Stage only files reported by subagents and commit with a message referencing the PR:
 
 ```bash
 git add [files from agent summaries]
