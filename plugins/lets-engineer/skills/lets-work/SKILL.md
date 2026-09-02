@@ -31,6 +31,7 @@ Determine how to proceed based on what was provided in `<input_document>`.
    - Identify files likely to change based on the prompt
    - Find existing test files for those areas (search for test/spec files that import, reference, or share names with the implementation files)
    - Note local patterns and conventions in the affected areas
+   - Read `CONTEXT.md` if it exists, so anything you name matches the project's domain language
 
 2. **Assess complexity and route**
 

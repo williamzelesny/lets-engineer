@@ -24,6 +24,7 @@ This skill does not implement code. It explores, clarifies, and documents decisi
 4. **Keep implementation out of the requirements doc by default** - Do not include libraries, schemas, endpoints, file layouts, or code-level design unless the brainstorm itself is inherently about a technical or architectural change.
 5. **Right-size the artifact** - Simple work gets a compact requirements document or brief alignment. Larger work gets a fuller document. Do not add ceremony that does not help planning.
 6. **Apply YAGNI to carrying cost, not coding effort** - Prefer the simplest approach that delivers meaningful value. Avoid speculative complexity and hypothetical future-proofing, but low-cost polish or delight is worth including when its ongoing cost is small and easy to maintain.
+7. **Speak the project's language** - When a `CONTEXT.md` glossary exists, read it and write the requirements doc in its terms. A doc that renames the domain forces every later reader to translate, and the new name usually wins by accident.
 
 ## Interaction Rules
 
