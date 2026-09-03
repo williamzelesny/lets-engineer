@@ -127,7 +127,9 @@ Skills write durable artifacts into your repo, and later runs read them back:
 - `docs/plans/` — implementation plans from `lets-plan`
 - `docs/solutions/` — learnings from `lets-compound`, kept current by `lets-refresh-learnings`
 - `docs/how-it-works/` — architecture and process docs from `lets-document`
+- `docs/decisions/` — decision records from `lets-model-domain`
 - `STRATEGY.md` — product direction from `lets-strategize`
+- `CONTEXT.md` — the domain glossary from `lets-model-domain`, read by every skill that names things
 
 The more you use the pipeline, the more context the agent has about your codebase and decisions — so each cycle starts further ahead than the last.
 
