@@ -1,6 +1,6 @@
 ---
 name: lets-review-code
-description: "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR."
+description: "Structured code review using tiered persona agents, confidence-gated findings, and a merge/dedup pipeline. Use when reviewing code changes before creating a PR. To review and verify a teammate's open PR and draft a reply, use lets-review-pr."
 argument-hint: "[blank to review current branch, or provide PR link]"
 ---
 
@@ -16,6 +16,7 @@ Reviews code changes using dynamically selected reviewer personas. Spawns parall
 - Can be invoked standalone
 - Can run as a read-only or autofix review step inside larger workflows
 - **See also:** to *understand* an unfamiliar change before critiquing it, run `lets-explain` first — it produces an explanatory walkthrough (orientation + teaching) and then offers a handoff here
+- **See also:** to review someone else's open PR — verifying it against CI, sibling PRs, and live state, and drafting a comment to post — use `lets-review-pr`
 
 ## Argument Parsing
 
