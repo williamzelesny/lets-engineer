@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1)](LICENSE)
 ![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757?logo=claude&logoColor=white)
 
-`lets-engineer` is a toolkit of **28 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
+`lets-engineer` is a toolkit of **29 workflow skills** (backed by **46 specialized review and research agents**) that turn a coding agent into a disciplined engineering partner. Instead of one-shot prompts, each skill runs a real workflow: it asks the right questions, produces a durable artifact — a requirements doc, a plan, a learning — and hands off cleanly to the next stage. Knowledge accrues in your repo, so the work *compounds*.
 
 ## The pipeline
 
@@ -94,6 +94,7 @@ Every skill you invoke is named to finish the sentence its prefix starts: `lets-
 | Skill | What it does |
 |---|---|
 | `lets-review-code` | Tiered persona code review with confidence-gated, deduplicated findings |
+| `lets-review-pr` | Review a teammate's PR against CI, sibling PRs, and live state, then draft a comment in your voice |
 | `lets-explain` | Orientation-first, teaching-depth walkthrough of a change — explains, doesn't critique |
 | `lets-resolve-pr-feedback` | Evaluate and fix PR review threads in parallel, then reply and resolve |
 | `lets-commit` | Create a clear, value-communicating commit |
